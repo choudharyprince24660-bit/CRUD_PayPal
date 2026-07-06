@@ -1,0 +1,19 @@
+<div class="container mt-5">
+
+  <h3>PayPal Payment</h3>
+
+  <div *ngIf="message" class="alert alert-info">
+    {{ message }}
+  </div>
+
+  <input class="form-control mb-2" placeholder="Order Name" [(ngModel)]="payment.orderName">
+
+  <input class="form-control mb-2" type="number" placeholder="Amount" [(ngModel)]="payment.amount">
+
+  <input class="form-control mb-2" placeholder="Currency" [(ngModel)]="payment.currency">
+
+  <button class="btn btn-primary" (click)="createOrder()">
+    Pay with PayPal
+  </button>
+
+</div>

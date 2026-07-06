@@ -1,4 +1,5 @@
 ﻿using CountryCRUD.Data;
+using CountryCRUD.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,6 +23,9 @@ builder.Services.AddCors(options =>
                   .AllowAnyMethod();
         });
 });
+builder.Services.Configure<PayPalSettings>(
+    builder.Configuration.GetSection("PayPal")
+);
 
 var app = builder.Build();
 
